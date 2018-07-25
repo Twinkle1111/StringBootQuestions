@@ -1,0 +1,85 @@
+1.why this prefix is / and suffix is .JSP used in Spring?
+ANS:InternalResourceViewResolver requires prefix and suffix to find the physical view .Here prefix is / and suffix is .jsp because First we have to keep the jsp file in the WEB-INF folder and getting a url we have to put / for prefix and then we have to keep .jsp as suffix .It is resolved by InternalResourceViewResolver.
+2.What is the use of @Controller in spring boot?
+ANS:when we use the @ResponseBody annotation on a method ,Spring converts that return value and writes into the http response automatically.First request goes to the DispatcherServlet Class and then to the HandlerMapping Class then Controller class.Each method in the controller must be annoted with @ResponseBody.And then Response goes to it.
+3.What is the use of @RequestMapping in spring boot?
+We can use @RequestMapping in various cases of String Boot.
+1.@requestMapping with Class:
+with Class definition we can us3 it to get the base URI.
+eg:@RequestMapping("/home")
+public class Pallavi 
+{
+}
+2.@RequestMapping with method:
+we can use it in the method to provide the URI.
+EG:@RequestMapping(value="/method")
+@ResponseBody
+public String m1()
+{
+return null;
+}
+3.RequestMapping with multiple URI:
+@RequestMapping(value={"/m1","/m/p"})
+@ResponseBody
+public String B1()
+{
+}
+4.@RequestMapping with HTTP method:
+AS Http parameter has no default we have to specify the value otherwise it will go to any HttpRequest
+eg:@RequestMapping(value="/has/kat",method=post)
+5.RequestMapping with headers:
+we can specify the header which has to invoke in HttpHandler
+eg:@RequestMapping(value="/m4",headers="name=Pallavi")
+@ResponseBody
+public String m1()
+{
+}
+6.@RequestMapping with producers and consumers
+we can use @RequestMapping in produces and consumes variable where we can specify content type of which method will be 
+invoked and the response Content type.
+eg:@RequestMapping(value="/m",produces="/ear/rat",consumes="/fr")
+@ResponseBody
+public String m()
+{
+}
+7.Spring @path variable
+we acn use @RequestMapping in case of @pathVariable annotation through which we can map the URI variable to one of the 
+method argument.
+@RequestMapping(value="/method7/{id}")
+@ResponseBody
+public String method7(@PathVariable("id") int id){
+	return "method7 with id="+id;
+} 
+8.RequestMapping with @RequestParam for URL parameters: 
+sometimes we get the parameters in the request URL eg:GET request
+9.@RequestMapping default method: I
+If the value is empty then we have to consider as it's the default method for the Controller Class.
+What is the use of @SpringBootApplication in spring boot.
+ANS:we can use @SpringBootApplication in the below three cases.
+@EnableAutoConfiguration: enable Spring Boot’s auto-configuration mechanism
+@ComponentScan: enable @Component scan on the package where the application is located.
+@Configuration: allow to register extra beans in the context or import additional configuration classes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
